@@ -44,11 +44,31 @@ public class ClientDao implements ClientRepositoryPort{
 		}
 		return listaClient;
 	}
-
+	
+	
 	@Override
 	public ClientModel registrar(ClientModel client) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ClientEntity clientEntity = new ClientEntity();
+		ClientModel clientModel = new ClientModel();
+		
+		clientEntity.setEmail(client.getEmail());
+		clientEntity.setEndereco(client.getEndereco());
+		clientEntity.setTipo(client.getTipo());
+		clientEntity.setSenha(client.getSenha());
+		clientEntity.setNome(client.getNome());
+		
+		ClientEntity clientEntitySaida = clientPersistence.save(clientEntity) ;
+		
+		clientModel.setEmail(clientEntitySaida.getEmail());
+		clientModel.setEndereco(clientEntitySaida.getEndereco());
+		clientModel.setId(clientEntitySaida.getId());
+		clientModel.setNome(clientEntitySaida.getNome());
+		clientModel.setSenha(clientEntitySaida.getSenha());
+		clientModel.setTipo(clientEntitySaida.getTipo());
+		
+		
+		return clientModel;
 	}
 
 }
