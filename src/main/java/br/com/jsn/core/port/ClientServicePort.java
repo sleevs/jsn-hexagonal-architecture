@@ -4,10 +4,11 @@ import java.util.List;
 
 import br.com.jsn.core.model.ClientModel;
 
-public interface ClientRepositoryPort {
+public interface ClientServicePort {
 	
-	
-	public List<ClientModel> listar();
 
+	public List<ClientModel> listar();
 	public ClientModel registrar(ClientModel client);
+
+
 }
