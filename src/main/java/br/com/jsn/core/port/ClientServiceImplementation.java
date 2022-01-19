@@ -17,13 +17,12 @@ public class ClientServiceImplementation implements ClientServicePort {
 
 	@Override
 	public List<ClientModel> listar() {
-		// TODO Auto-generated method stub
+	
 		return clientRepositoryPort.listar();
 	}
 
 	@Override
 	public ClientModel registrar(ClientModel client) {
-		// TODO Auto-generated method stub
 		return clientRepositoryPort.registrar(client);
 	}
 
